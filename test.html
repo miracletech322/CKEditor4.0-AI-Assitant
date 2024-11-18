@@ -1,0 +1,15 @@
+<html>
+
+<body>
+	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+	<textarea name="body" id="body_message" data-gramm="false" rows="30" cols="100" style="width:95%;"></textarea>
+	<script>
+		window.onload = function () {
+			CKEDITOR.replace('body_message', {
+				extraAllowedContent: 'img[alt,border,width,height,align,vspace,hspace,!src];'
+			});
+		}
+	</script>
+</body>
+
+</html>

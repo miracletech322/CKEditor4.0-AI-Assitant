@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css" />
+	<link href="css/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+	<script src="jquery-1.9.1.js"></script>
+	<script src="jquery-ui-1.10.3.custom.min.js"></script>
+	<script type="text/javascript" src="jscolor/jscolor.js"></script>
+	<style type="text/css" id="jsplus_currentButtonStyles"></style>
+</head>
+<body>
+<table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td style="vertical-align:top;padding-top:7px; padding-right:20px;">
+			<span style="display:none"><input id="setting-background-1" class="color" value="#fff"/> Background <br></span>
+			<input class="color {valueElement:'setting-gradient-1'}">
+			<input id="setting-gradient-1" type="hidden" value="#fff"/> Background gradient start <br>
+			<input class="color {valueElement:'setting-gradient-2'}">
+			<input id="setting-gradient-2" type="hidden" value="#fff"/> Background gradient end <br>
+			<input class="color {valueElement:'setting-color-1'}">
+			<input id="setting-color-1"  type="hidden" value="#fff"/> Text color <br>
+			<input class="color {valueElement:'setting-textShadow-4'}">
+			<input id="setting-textShadow-4" type="hidden" value="#fff"/> Text shadow <br>
+			<input class="color {valueElement:'setting-border-2'}">
+			<input id="setting-border-2" type="hidden" value="#fff"/> Border color <br>
+			<input class="color {valueElement:'setting-boxShadow-6'}">
+			<input id="setting-boxShadow-6"  type="hidden" value="#fff"/> Box shadow <br>
+			<div style="border-top:1px solid #ccc; margin:10px 0px 10px 0px;"></div>
+			<table class="setting_table" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+				<tr><td colspan="3" style="padding-bottom:5px;"><strong>Text</strong></td></tr>
+				<tr>
+					<td>Font:</td><td colspan="2">
+						<select id="setting-fontFamily-1">
+							<option value="arial">Arial</option>
+							<option value="courier new">Courier New</option>
+							<option value="georgia">Georgia</option>
+							<option value="impact">Impact</option>
+							<option value="times new roman">Times New Roman</option>
+							<option value="trebuchet ms">Trebuchet MS</option>
+							<option value="verdana">Verdana</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Size:</td>
+					<td><strong id="setting-fontSize-1-value">5</strong><strong>px</strong></td>
+					<td style="width:100px;"><input class="setting range" id="setting-fontSize-1" value="17" min="8" max="28" type="range" /></td>
+				</tr>
+				<tr><td>Style:</td><td colspan="2">
+					<input id="fontWeight1" class="btn1" type="button" value="B"/>
+					<input id="fontStyle1" class="btn1" type="button" value="I"/>
+					<input id="fontWeight" value="normal" class="hidden" type="checkbox"/>
+					<input id="fontStyle" value="normal" class="hidden" type="checkbox"/>
+				</td></tr>
+			</table>	
+		</td>
+		<td style="vertical-align:top;width:60%;">
+			<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+				<tr><td>Horizontal padding:</td><td style="width:35px;"><strong id="setting-padding-2-value">5</strong><strong>px</strong></td><td style="width:50%;padding-right:10px;"><input id="setting-padding-2" type="range" class="range" min="0" max="76"/></td></tr>
+				<tr><td>Vertical padding:</td><td><strong id="setting-padding-1-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-padding-1" type="range" class="range" min="0" max="32"/></td></tr>
+				<tr><td>Border width:</td><td><strong id="setting-border-1-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-border-1" type="range" class="range" min="0" max="12"/></td></tr>
+				<tr><td>Border radius:</td><td><strong id="setting-borderRadius-1-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-borderRadius-1" type="range" class="range" min="0" max="42"/></td></tr>
+				<tr><td colspan="3" style="padding:5px;"></td></tr>
+				<tr><td colspan="3" style="border-top:1px solid #ccc;"></td></tr>
+				<tr><td colspan="3" style="padding:5px;"></td></tr>
+				<tr><td colspan="3" style="padding-bottom:5px;"><input id="textShadow" type="checkbox">&nbsp;<strong>Text shadow</strong></td></tr>
+				<tr><td>Vertical position:</td><td><strong id="setting-textShadow-2-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-textShadow-2" type="range" class="range" min="-50" max="50"/></td></tr>
+				<tr><td>Horizontal position:</td><td><strong id="setting-textShadow-1-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-textShadow-1" type="range" class="range" min="-50" max="50"/></td></tr>
+				<tr><td>Blur radius:</td><td><strong id="setting-textShadow-3-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-textShadow-3" type="range" class="range" min="0" max="50"/></td></tr>
+			<tr><td colspan="3" style="padding:5px;"></td></tr>
+				<tr><td colspan="3" style="border-top:1px solid #ccc;"></td></tr>
+				<tr><td colspan="3" style="padding:5px;"></td></tr>
+				<tr><td  style="padding-bottom:5px;"><input id="boxShadow" type="checkbox">&nbsp;<strong>Box shadow</strong></td><td colspan="2" style="padding-bottom:5px;"><input id="setting-boxShadow-1" type="checkbox">&nbsp;<strong>Inset</strong></td></tr>
+				<tr><td>Vertical position:</td><td><strong id="setting-boxShadow-3-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-boxShadow-3" type="range" class="range" min="-50" max="50"/></td></tr>
+				<tr><td>Horizontal position:</td><td><strong id="setting-boxShadow-2-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-boxShadow-2" type="range" class="range" min="-50" max="50"/></td></tr>
+				<tr><td>Blur radius:</td><td><strong id="setting-boxShadow-4-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-boxShadow-4" type="range" class="range" min="0" max="50"/></td></tr>
+				<tr><td>Spread radius:</td><td><strong id="setting-boxShadow-5-value">5</strong><strong>px</strong></td><td style="padding-right:10px;"><input id="setting-boxShadow-5" type="range" class="range" min="-50" max="50"/></td></tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table style="width:100%;margin-top:10px;" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>Link:</td>
+		<td><input id="button-href" value="http://" type="text"/></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="padding-top:5px;"></td>
+	</tr>
+	<tr>
+		<td>Text:</td>
+		<td><input id="button-text" value="Download" type="text"/></td>
+	</tr>
+</table>
+<div>Preview</div>
+<div id="jsplus_preview" class="jsplus_preview"><a id="jsplus_exampleButton" onclick="return false;" href="#" class="myButton">my button</a></div>
+</body>
+
+<script type="text/javascript">
+$(function(){
+$(".range").each(function(){
+	var div = $('<div></div>'),_this = this, value = 0;
+	$(_this).hide().after(div);
+	$(_this).change(function(){
+		if( _this.value!=value )
+			div.slider('option','value',_this.value);
+		div.slider("option", "disabled", $(_this).is(':disabled')?true:false);
+	});
+	div.slider({
+		min:parseInt($(_this).attr('min')),
+		max:parseInt($(_this).attr('max')),
+		slide: function( event, ui ) {
+			value = _this.value = ui.value;
+			__(_this);
+		},
+		value:_this.value
+		//values: [ parseInt($(this).attr('min')), parseInt($(this).attr('max')) ]
+	});
+});
+});
+</script>
+
+<script type="text/javascript" src="button.lib.js"></script>
+</html>

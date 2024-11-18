@@ -1,0 +1,28 @@
+.cke_menu_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cke_menu_item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cke_menu_item:hover {
+    background-color: #eee;
+}
+
+.cke_submenu {
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    left: 100%; /* positions the submenu to the right */
+    top: 0;
+}
+
+.cke_menu_item:hover > .cke_submenu {
+    display: block;
+}
