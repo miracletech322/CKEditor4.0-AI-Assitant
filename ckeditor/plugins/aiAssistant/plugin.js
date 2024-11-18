@@ -45,13 +45,8 @@ function openDialog(editor) {
                 }]
             }],
             onOk: function () {
-                var questionText = document.getElementById('cke-question').value;
-                var responseText = document.getElementById('cke-response').value;
-                console.log('Question:', questionText);
-                console.log('Response:', responseText);
             },
             onCancel: function () {
-                console.log('Dialog canceled');
             }
         };
     });
@@ -59,22 +54,31 @@ function openDialog(editor) {
     // Open the dialog
     editor.openDialog('aiAssistantDialog');
 
+    const handleGenerate = () => {
+        ckeHandleGenerate(editor);
+    }
+
+    const handleInsert = () => {
+        ckeHandleInsert(editor);
+    }
+
+    const handleReplace = () => {
+        ckeHandleReplace(editor);
+    }
+
+    if (document.getElementById("cke-btn-generate").dataset.clickBound == undefined) {
+        document.getElementById("cke-btn-generate").addEventListener('click', handleGenerate);
+        document.getElementById("cke-btn-insert").addEventListener('click', handleInsert);
+        document.getElementById("cke-btn-replace").addEventListener('click', handleReplace);
+
+        document.getElementById("cke-btn-generate").dataset.clickBound = true;
+        document.getElementById("cke-btn-insert").dataset.clickBound = true;
+        document.getElementById("cke-btn-replace").dataset.clickBound = true;
+    }
+
     var selectedText = editor.getSelection().getSelectedText();
     document.getElementById("cke-question").value = selectedText;
     document.getElementById("cke-response").value = "";
-
-    document.getElementById("cke-btn-generate").addEventListener('click', () => {
-        ckeHandleGenerate(editor);
-    })
-
-    document.getElementById("cke-btn-insert").addEventListener('click', () => {
-        ckeHandleInsert(editor);
-    })
-
-
-    document.getElementById("cke-btn-replace").addEventListener('click', () => {
-        ckeHandleReplace(editor);
-    })
 }
 
 const ckeHandleGenerate = (editor) => {

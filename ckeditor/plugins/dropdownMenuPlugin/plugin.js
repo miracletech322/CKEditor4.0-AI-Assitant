@@ -141,7 +141,8 @@ CKEDITOR.plugins.add('dropdownMenuPlugin', {
                 for (var i = 0; i < strings.length; i++) {
                     if (strings[i][0] === value) {
                         // Show an alert with the item text
-                        alert(strings[i][2]);
+                        const event = new Event('click');
+                        document.getElementById("cke_66").dispatchEvent(event);
                         break;
                     }
                 }
