@@ -1,6 +1,45 @@
 <html>
 
 <body>
+	<style>
+		.dropdown-container {
+			position: relative;
+		}
+
+		.input-field {
+			width: 100%;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+		.dropdown-menu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			z-index: 1000;
+			max-height: 200px;
+			overflow-y: auto;
+		}
+
+		.dropdown-menu.active {
+			display: block;
+		}
+
+		.dropdown-item {
+			padding: 10px;
+			cursor: pointer;
+			border-bottom: 1px solid #f0f0f0;
+		}
+
+		.dropdown-item:hover {
+			background-color: #f9f9f9;
+		}
+	</style>
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 	<textarea name="body" id="body_message" data-gramm="false" rows="30" cols="100" style="width:95%;"></textarea>
 	<script>

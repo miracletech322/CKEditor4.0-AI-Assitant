@@ -84,21 +84,24 @@
 //         });
 //     }
 // });
+let cke_credits = 0;
+let cke_aiCmdType;
+let cke_aiTrigger;
 
 CKEDITOR.plugins.add('dropdownMenuPlugin', {
     requires: ['richcombo'],
     init: function (editor) {
         // Array of strings to choose from that'll be inserted into the editor
         var strings = [
-            ['@@Tone::displayList()@@', 'Direct', 'directTone'],
-            ['@@Tone::displayList()@@', 'Casual', 'casualTone'],
+            ['@@Tone::displayList(Direct)@@', 'Direct', 'directTone'],
+            ['@@Tone::displayList(Casual)@@', 'Casual', 'casualTone'],
 
-            ['@@Style::displayList()@@', 'Business', 'businessStyle'],
-            ['@@Style::displayList()@@', 'Legal', 'legalStyle'],
+            ['@@Style::displayList(Business)@@', 'Business', 'businessStyle'],
+            ['@@Style::displayList(Legal)@@', 'Legal', 'legalStyle'],
 
-            ['@@Translate::displayList()@@', 'English', 'translateEnglish'],
-            ['@@Translate::displayList()@@', 'Spanish', 'translateSpanish'],
-            ['@@Translate::displayList()@@', 'French', 'translateFrench'],
+            ['@@Translate::displayList(English)@@', 'English', 'translateEnglish'],
+            ['@@Translate::displayList(Spanish)@@', 'Spanish', 'translateSpanish'],
+            ['@@Translate::displayList(French)@@', 'French', 'translateFrench'],
         ];
 
         // Add the menu to the editor
@@ -128,7 +131,7 @@ CKEDITOR.plugins.add('dropdownMenuPlugin', {
                     }
                 }
 
-                this.startGroup("Translate");
+                this.startGroup("Translate");   
                 for (var i = 0; i < strings.length; i++) {
                     if (strings[i][2].indexOf("translate") != -1) {
                         this.add(strings[i][0], strings[i][1], strings[i][2]);
@@ -141,6 +144,9 @@ CKEDITOR.plugins.add('dropdownMenuPlugin', {
                 for (var i = 0; i < strings.length; i++) {
                     if (strings[i][0] === value) {
                         // Show an alert with the item text
+                        cke_aiTrigger = true;
+                        cke_aiCmdType = strings[i][2];
+
                         const event = new Event('click');
                         document.getElementById("cke_66").dispatchEvent(event);
                         break;
